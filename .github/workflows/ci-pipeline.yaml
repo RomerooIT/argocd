@@ -57,5 +57,4 @@ jobs:
           git config --global user.email "roman.knyrko@mail.ru"
           git add .
           git commit -m "${{ env.CI_COMMIT_MESSAGE }}"
-          git push "https://${ACCESS_TOKEN}@github.com/owner/repo.git" main
-
+          git push "https://${ACCESS_TOKEN}@github.com/RomerooIT/argocd.git" main
