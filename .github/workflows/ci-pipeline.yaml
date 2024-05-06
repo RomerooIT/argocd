@@ -21,7 +21,8 @@ jobs:
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-          SHORT_SHA: ${{ github.sha | truncate(7, '') }}
+          IMAGE_TAG: ${{ github.sha }}
+          SHORT_SHA: ${{ github.sha[0:7] }} # Укороченный тег
         working-directory: ./MyApp/NginxDocker
         run: |
           docker build -t ahineia/nginx-ci-cd:${SHORT_SHA} .
@@ -32,7 +33,8 @@ jobs:
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-          SHORT_SHA: ${{ github.sha | truncate(7, '') }} 
+          IMAGE_TAG: ${{ github.sha }}
+          SHORT_SHA: ${{ github.sha[0:7] }} # Укороченный тег
         working-directory: ./MyApp/Apache-Docker
         run: |
           docker build -t ahineia/apache-ci-cd:${SHORT_SHA} .
