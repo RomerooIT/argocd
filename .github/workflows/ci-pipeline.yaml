@@ -33,7 +33,6 @@ jobs:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
           IMAGE_TAG: 1.0.${{ github.run_number }}
-          GH_TOKEN: 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
         working-directory: /home/runner/work/argocd/argocd/MyApp/Apache-Docker
         run: |
           docker build -t ahineia/apache-ci-cd:${IMAGE_TAG} .
@@ -43,6 +42,7 @@ jobs:
       - name: Update values.yaml
         env:
           IMAGE_TAG: 1.0.${{ github.run_number }}
+          GH_TOKEN: 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
         working-directory: /home/runner/work/argocd/argocd/helm-charts/nginx-app
         run: |
           echo "Replacing image tag in values.yaml"
