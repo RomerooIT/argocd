@@ -39,6 +39,7 @@ jobs:
           docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
           docker push ahineia/apache-ci-cd:${IMAGE_TAG}
 
+   
       - name: Update values.yaml
         env:
           IMAGE_TAG: 1.0.${{ github.run_number }}
@@ -47,19 +48,7 @@ jobs:
           echo "Replacing image tag in values.yaml"
           sed -i "s/tag: \".*\"/tag: \"${IMAGE_TAG}\"/" values.yaml
 
-          echo "Setting git user name"
-          git config --global user.name "RomerooIT"
-
-          echo "Setting git user email"
-          git config --global user.email "roman.knyrko@mail.ru"
-
-          echo "Adding values.yaml to git"
-          git add values.yaml
-
-          git status
-
-          echo "Committing changes"
-          git commit -m "Update image tag to ${IMAGE_TAG}"
-
-          echo "Pushing changes to remote repository"
-          git push
+      - name: Commit & Push changes
+        uses: actions-js/push@master
+        with:
+          github_token: ${{ secrets.SECRET }}
