@@ -1,0 +1,29 @@
+replicaCount: 1
+
+image:
+  apache:
+    repository: ahineia/apache-user2
+    tag: "v1.0"
+    pullPolicy: IfNotPresent
+    containerPort: 8080
+  nginx:
+    repository: ahineia/nginx-29kuber
+    tag: "3"
+    pullPolicy: IfNotPresent
+    containerPort: 80
+
+service:
+  nginx:
+    name: nginx-service
+    type: ClusterIP
+    port: 80
+    targetPort: 80
+  apache:
+    name: apache-service
+    type: ClusterIP
+    port: 8080
+    targetPort: 8080
+
+ingress:
+  name: nginx-ingress31
+  className: nginx
