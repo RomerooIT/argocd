@@ -7,8 +7,8 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
   annotations:
     argocd-image-updater.argoproj.io/image-list: |
-      - ahineia/apache-ci-cd:~v0.0
-      - ahineia/nginx-ci-cd:~v0.0
+      - ahineia/apache-ci-cd:~v1.0
+      - ahineia/nginx-ci-cd:~v1.0
     argocd-image-updater.argoproj.io/write-back-method: git
 spec:
   project: default
