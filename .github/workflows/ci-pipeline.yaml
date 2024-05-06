@@ -21,7 +21,7 @@ jobs:
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-          IMAGE_TAG: 1.${{ github.run_number }}
+          IMAGE_TAG: 1.0.${{ github.run_number }}
         working-directory: /home/runner/work/argocd/argocd/MyApp/Nginx-Docker
         run: |
           docker build -t ahineia/nginx-ci-cd:${IMAGE_TAG} .
@@ -32,7 +32,7 @@ jobs:
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-          IMAGE_TAG: 1.${{ github.run_number }}
+          IMAGE_TAG: 1.0.${{ github.run_number }}
         working-directory: /home/runner/work/argocd/argocd/MyApp/Apache-Docker
         run: |
           docker build -t ahineia/apache-ci-cd:${IMAGE_TAG} .
