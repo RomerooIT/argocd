@@ -51,9 +51,10 @@ jobs:
         env: 
           CI_COMMIT_MESSAGE: Changed docker images tags
           CI_COMMIT_AUTHOR: RomerooIT
+          ACCESS_TOKEN: ${{ secrets.SECRET }}
         run: |
           git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
           git config --global user.email "roman.knyrko@mail.ru"
           git add .
           git commit -m "${{ env.CI_COMMIT_MESSAGE }}"
-          git push
+          git push origin main --quiet --set-upstream "${{ github.ref }}" --oauth2 ${ACCESS_TOKEN}
