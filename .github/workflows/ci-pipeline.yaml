@@ -62,4 +62,4 @@ jobs:
           git commit -m "Update image tag to ${IMAGE_TAG}"
 
           echo "Pushing changes to remote repository"
-          git push origin main
+          git push
