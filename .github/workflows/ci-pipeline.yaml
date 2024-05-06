@@ -38,3 +38,16 @@ jobs:
           docker build -t ahineia/apache-ci-cd:${IMAGE_TAG} .
           docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
           docker push ahineia/apache-ci-cd:${IMAGE_TAG}
+
+
+      - name: Update values.yaml
+        env:
+            IMAGE_TAG: 1.0.${{ github.run_number }}
+        working-directory: /home/runner/work/argocd/argocd/MyApp/helm-charts/nginx-app
+        run: |
+          sed -i "s/tag: \".*\"/tag: \"${IMAGE_TAG}\"/" values.yaml
+          git config --global user.name "RomerooIT"
+          git config --global user.email "roman.knyrko@mail.ru"
+          git add values.yaml
+          git commit -m "Update image tag to ${IMAGE_TAG}"
+          git push origin main
