@@ -43,7 +43,7 @@ jobs:
       - name: Update values.yaml
         env:
             IMAGE_TAG: 1.0.${{ github.run_number }}
-        working-directory: /home/runner/work/argocd/argocd/MyApp/helm-charts/nginx-app
+        working-directory: /home/runner/work/argocd/argocd/helm-charts/nginx-app
         run: |
           sed -i "s/tag: \".*\"/tag: \"${IMAGE_TAG}\"/" values.yaml
           git config --global user.name "RomerooIT"
