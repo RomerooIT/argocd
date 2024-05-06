@@ -15,15 +15,11 @@ image:
 service:
   nginx:
     name: nginx-service
-    type: ClusterIP
+    type: NodePort
     port: 80
     targetPort: 80
   apache:
     name: apache-service
-    type: ClusterIP
+    type: NodePort
     port: 8080
     targetPort: 8080
-
-ingress:
-  name: nginx-ingress31
-  className: nginx
