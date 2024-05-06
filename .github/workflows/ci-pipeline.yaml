@@ -39,7 +39,6 @@ jobs:
           docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
           docker push ahineia/apache-ci-cd:${IMAGE_TAG}
 
-   
       - name: Update values.yaml
         env:
           IMAGE_TAG: 1.0.${{ github.run_number }}
