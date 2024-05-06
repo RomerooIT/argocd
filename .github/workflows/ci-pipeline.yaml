@@ -17,13 +17,27 @@ jobs:
           ls -la
           pwd
 
+      - name: Set tag and save as artifact
+        id: set_tag
+        run: |
+          echo "::set-output name=tag::${{ github.sha }}"
+          echo "${{ github.sha }}" > tag.txt
+        # Save tag.txt as an artifact
+      - name: Save tag artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: tag-artifact
+          path: tag.txt
+
       - name: Build and push Nginx Docker image
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-          IMAGE_TAG: ${{ github.sha }}
         working-directory: /home/runner/work/argocd/argocd/MyApp/Nginx-Docker
         run: |
+          # Retrieve the tag from the artifact
+          cat ${{ runner.workspace }}/tag-artifact/tag.txt > tag.txt
+          IMAGE_TAG=$(cat tag.txt)
           docker build -t ahineia/nginx-ci-cd:${IMAGE_TAG} .
           docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
           docker push ahineia/nginx-ci-cd:${IMAGE_TAG}
@@ -32,9 +46,11 @@ jobs:
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-          IMAGE_TAG: ${{ github.sha }}
         working-directory: /home/runner/work/argocd/argocd/MyApp/Apache-Docker
         run: |
+          # Retrieve the tag from the artifact
+          cat ${{ runner.workspace }}/tag-artifact/tag.txt > tag.txt
+          IMAGE_TAG=$(cat tag.txt)
           docker build -t ahineia/apache-ci-cd:${IMAGE_TAG} .
           docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
           docker push ahineia/apache-ci-cd:${IMAGE_TAG}
