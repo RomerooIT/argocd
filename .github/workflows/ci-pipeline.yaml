@@ -19,6 +19,7 @@ jobs:
           IMAGE_TAG: ${{ github.sha }}
         working-directory: ./MyApp/NginxDocker
         run: |
+          cd ./MyApp/NginxDocker
           docker build -t ahineia/nginx-ci-cd:${IMAGE_TAG} .
           docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
           docker push ahineia/nginx-ci-cd:${IMAGE_TAG}
@@ -30,6 +31,7 @@ jobs:
           IMAGE_TAG: ${{ github.sha }}
         working-directory: ./MyApp/Apache-Docker
         run: |
+          cd ./MyApp/Apache-Docker
           docker build -t ahineia/apache-ci-cd:${IMAGE_TAG} .
           docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
           docker push ahineia/apache-ci-cd:${IMAGE_TAG}
