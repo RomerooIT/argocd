@@ -3,31 +3,39 @@ kind: Application
 metadata:
   name: nginx
   namespace: argocd
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
   annotations:
     argocd-image-updater.argoproj.io/image-list: |
-      - ahineia/apache-ci-cd:~v1.0
       - ahineia/nginx-ci-cd:~v1.0
+      - ahineia/apache-ci-cd:~v1.0
     argocd-image-updater.argoproj.io/write-back-method: git
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
   source:
-    repoURL: "git@github.com:RomerooIT/argocd.git"
-    targetRevision: HEAD
     path: "helm-charts/nginx-app"
+    repoURL: "git@github.com:RomerooIT/argocd.git"
+    targetRevision: owner
     helm:
-      valueFiles:
-        - values.yaml
       parameters:
-        - name: "container.image"
-          value: stable-alpine3.17-slim
+        - name: "nginx.image.repository"
+          value: ahineia/nginx-ci-cd
+        - name: "nginx.image.tag"
+          value: v1.0.30
+        - name: "apache.image.repository"
+          value: ahineia/apache-ci-cd
+        - name: "apache.image.tag"
+          value: v1.0.30
   destination:
     server: https://kubernetes.default.svc
-    namespace: task31
+    namespace: default
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
+      allowEmpty: false
     syncOptions:
+      - Validate=true
       - CreateNamespace=true
+      - PrunePropagationPolicy=foreground
+      - PruneLast=true
