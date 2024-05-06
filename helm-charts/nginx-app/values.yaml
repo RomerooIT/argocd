@@ -3,12 +3,12 @@ replicaCount: 1
 image:
   apache:
     repository: ahineia/apache-ci-cd
-    tag: "v1.0"
+    tag: 0
     pullPolicy: IfNotPresent
     containerPort: 8080
   nginx:
     repository: ahineia/nginx-ci-cd
-    tag: "3"
+    tag: 0
     pullPolicy: IfNotPresent
     containerPort: 80
 
