@@ -42,7 +42,6 @@ jobs:
       - name: Update values.yaml
         env:
           IMAGE_TAG: 1.0.${{ github.run_number }}
-          GH_TOKEN: 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
         working-directory: /home/runner/work/argocd/argocd/helm-charts/nginx-app
         run: |
           echo "Replacing image tag in values.yaml"
@@ -63,4 +62,4 @@ jobs:
           git commit -m "Update image tag to ${IMAGE_TAG}"
 
           echo "Pushing changes to remote repository"
-          git push --token $GH_TOKEN
+          git push
