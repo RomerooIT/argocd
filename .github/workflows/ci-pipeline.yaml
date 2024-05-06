@@ -14,24 +14,28 @@ jobs:
 
       - name: Build and push Nginx Docker image
         env:
-          DOCKER_USERNAME: ${{ secrets.GITHUB_USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
           IMAGE_TAG: ${{ github.sha }}
         working-directory: ./MyApp/NginxDocker
         run: |
           cd ./MyApp/NginxDocker
+          ls -la
+          pwd
           docker build -t ahineia/nginx-ci-cd:${IMAGE_TAG} .
           docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
           docker push ahineia/nginx-ci-cd:${IMAGE_TAG}
 
       - name: Build and push Apache Docker image
         env:
-          DOCKER_USERNAME: ${{ secrets.GITHUB_USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
           IMAGE_TAG: ${{ github.sha }}
         working-directory: ./MyApp/Apache-Docker
         run: |
           cd ./MyApp/Apache-Docker
+          ls -la
+          pwd
           docker build -t ahineia/apache-ci-cd:${IMAGE_TAG} .
           docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
           docker push ahineia/apache-ci-cd:${IMAGE_TAG}
