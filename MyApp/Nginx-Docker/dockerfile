@@ -12,4 +12,4 @@ COPY www/. .
 
 RUN touch /var/run/nginx.pid && \
     chown nginx:nginx /var/run/nginx.pid && \
-    chown -R nginx:nginx /etc/nginx /var/www  /var/cache/nginx /etc/letsencrypt
+    chown -R nginx:nginx /etc/nginx /var/www  /var/cache/nginx
