@@ -5,24 +5,26 @@ metadata:
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: |
+      - ahineia/apache-ci-cd:~v0.0
+      - ahineia/nginx-ci-cd:~v0.0
+    argocd-image-updater.argoproj.io/write-back-method: git
 spec:
   project: default
-
   source:
     repoURL: "git@github.com:RomerooIT/argocd.git"
     targetRevision: HEAD
     path: "helm-charts/nginx-app"
     helm:
       valueFiles:
-      - values.yaml
+        - values.yaml
       parameters:
-      - name: "container.image"
-        value: stable-alpine3.17-slim
-
+        - name: "container.image"
+          value: stable-alpine3.17-slim
   destination:
     server: https://kubernetes.default.svc
     namespace: task31
-
   syncPolicy:
     automated:
       prune: true
