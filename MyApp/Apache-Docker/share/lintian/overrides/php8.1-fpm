@@ -1,3 +1,0 @@
-php8.1-fpm: apache2-reverse-dependency-calls-wrapper-script postinst a2enconf
-php8.1-fpm: apache2-reverse-dependency-calls-wrapper-script postinst a2enmod
-php8.1-fpm: embedded-library usr/sbin/php-fpm8.1: file
