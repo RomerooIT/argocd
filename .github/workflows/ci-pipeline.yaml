@@ -17,25 +17,21 @@ jobs:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
           IMAGE_TAG: ${{ github.sha }}
-        working-directory: ./MyApp/NginxDocker
+          SHORT_SHA: ${{ github.sha }} 
+        working-directory: /home/runner/work/argocd/MyApp/Nginx-Docker
         run: |
-          cd ./MyApp/NginxDocker
-          ls -la
-          pwd
-          docker build -t ahineia/nginx-ci-cd:${IMAGE_TAG} .
+          docker build -t ahineia/nginx-ci-cd:${SHORT_SHA} .
           docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-          docker push ahineia/nginx-ci-cd:${IMAGE_TAG}
+          docker push ahineia/nginx-ci-cd:${SHORT_SHA}
 
       - name: Build and push Apache Docker image
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
           IMAGE_TAG: ${{ github.sha }}
-        working-directory: ./MyApp/Apache-Docker
+          SHORT_SHA: ${{ github.sha }}
+        working-directory: /home/runner/work/argocd/MyApp/Apache-Docker
         run: |
-          cd ./MyApp/Apache-Docker
-          ls -la
-          pwd
-          docker build -t ahineia/apache-ci-cd:${IMAGE_TAG} .
+          docker build -t ahineia/apache-ci-cd:${SHORT_SHA} .
           docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-          docker push ahineia/apache-ci-cd:${IMAGE_TAG}
+          docker push ahineia/apache-ci-cd:${SHORT_SHA}
