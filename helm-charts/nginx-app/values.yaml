@@ -3,12 +3,12 @@ replicaCount: 1
 image:
   apache:
     repository: ahineia/apache-ci-cd
-    tag: latest
+    tag: 97153365deb24b6e2176f887bc9c50321590d6e4
     pullPolicy: IfNotPresent
     containerPort: 8080
   nginx:
     repository: ahineia/nginx-ci-cd
-    tag: latest
+    tag: 97153365deb24b6e2176f887bc9c50321590d6e4
     pullPolicy: IfNotPresent
     containerPort: 80
 
