@@ -1,0 +1,35 @@
+name: Build and Publish Docker Images
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Build and push Nginx Docker image
+        env:
+          DOCKER_USERNAME: ${{ secrets.GITHUB_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
+          IMAGE_TAG: ${{ github.sha }}
+        working-directory: ./MyApp/NginxDocker
+        run: |
+          docker build -t ahineia/nginx-ci-cd:${IMAGE_TAG} .
+          docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+          docker push ahineia/nginx-ci-cd:${IMAGE_TAG}
+
+      - name: Build and push Apache Docker image
+        env:
+          DOCKER_USERNAME: ${{ secrets.GITHUB_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
+          IMAGE_TAG: ${{ github.sha }}
+        working-directory: ./MyApp/Apache-Docker
+        run: |
+          docker build -t ahineia/apache-ci-cd:${IMAGE_TAG} .
+          docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+          docker push ahineia/apache-ci-cd:${IMAGE_TAG}
