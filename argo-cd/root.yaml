@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: "git@github.com:RomerooIT/argocd.git
     targetRevision: HEAD
-    path: "task31/argocd/applications"
+    path: "argo-cd/applications"
   destination:
     server: https://kubernetes.default.svc
     namespace: default
