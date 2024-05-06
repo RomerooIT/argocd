@@ -47,7 +47,13 @@ jobs:
           echo "Replacing image tag in values.yaml"
           sed -i "s/tag: \".*\"/tag: \"${IMAGE_TAG}\"/" values.yaml
 
-      - name: Commit & Push changes
-        uses: actions-js/push@master
-        with:
-          github_token: ${{ secrets.SECRET }}
+      - name: GIT commit and push docs
+        env: 
+          CI_COMMIT_MESSAGE: Continuous Integration Build Artifacts
+          CI_COMMIT_AUTHOR: Continuous Integration
+        run: |
+          git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
+          git config --global user.email "username@users.noreply.github.com"
+          git add .
+          git commit -m "${{ env.CI_COMMIT_MESSAGE }}"
+          git push
