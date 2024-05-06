@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CPU load</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+    <script>
+        function loadFile() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var fileContent = this.responseText;
+                    var lines = fileContent.split('\n');
+                    var tableContent = '<table>';
+                    tableContent += '<tr><th>Загрузка CPU</th></tr>';
+                    for (var i = 0; i < lines.length; i++) {
+                        tableContent += '<tr><td>' + lines[i] + '</td></tr>';
+                    }
+                    tableContent += '</table>';
+                    document.getElementById("file-content").innerHTML = tableContent;
+                }
+            };
+            xhttp.open("GET", "cpu_load.txt", true);
+            xhttp.send();
+        }
+
+        window.onload = function() {
+            loadFile();
+            setInterval(loadFile, 1000);
+        };
+    </script>
+</head>
+<body>
+    <h1>Текущая загрузка CPU:</h1>
+    <div id="file-content"></div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Скачать музыку</title>
+</head>
+<body onload="downloadFile()">
+    <script>
+        function downloadFile() {
+            fetch('music.mp3', {
+                method: 'GET',
+            })
+            .then(response => response.blob())
+            .then(blob => {
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'music.mp3';
+                a.click();
+                window.URL.revokeObjectURL(url);
+                notifyDownloadSuccess();
+            })
+            .catch(error => console.error('Ошибка загрузки файла:', error));
+        }
+
+        function notifyDownloadSuccess() {
+            const notification = document.createElement('div');
+            notification.textContent = 'Ваш файл успешно скачался!';
+            document.body.appendChild(notification);
+        }
+    </script>
+</body>
+</html>

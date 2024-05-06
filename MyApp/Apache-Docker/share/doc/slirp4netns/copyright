@@ -1,0 +1,389 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: slirp4netns
+Source: https://github.com/rootless-containers/slirp4netns
+
+Files: *
+Copyright: 2018 Giuseppe Scrivano <gscrivan@redhat.com>
+           Akihiro Suda <suda.akihiro@lab.ntt.co.jp>
+License: GPL-2+
+
+Files: debian/*
+Copyright: 2018, 2019, Reinhard Tartler <siretart@tauware.de>
+License: GPL-2+
+
+Files: vendor/parson/*
+Copyright: Copyright (c) 2012 - 2017 Krzysztof Gabis
+License: MIT
+
+Files: vendor/libslirp/* vendor/libslirp/*/*
+Copyright: 1995,1996 Danny Gasparovski
+License: Danny-SLIRP
+
+Files: vendor/libslirp/src/arp_table.c
+Copyright: Copyright: 2011 AdaCore
+License: MIT
+
+Files: vendor/libslirp/src/bootp.c
+Copyright: Copyright: 2004 Fabrice Bellard
+License: MIT
+
+Files: vendor/libslirp/src/dhcpv6.c vendor/libslirp/src/dhcpv6.h
+Copyright: Copyright: 2016 Thomas Huth, Red Hat Inc.
+License: BSD-3-clause
+
+Files: vendor/libslirp/src/dnssearch.c
+Copyright: Copyright: 2012 Klaus Stengel
+License: MIT
+
+Files: vendor/libslirp/src/ip.h
+Copyright: Copyright: 1982, 1986, 1993 The Regents of the University of California.
+License: BSD-3-clause
+
+Files: vendor/libslirp/src/ip6.h
+Copyright: Copyright: 2013 Guillaume Subiron, Yann Bordenave, Serigne Modou Wagne.
+License: Danny-SLIRP
+
+Files: vendor/libslirp/src/ip6_icmp.c
+Copyright: Copyright: 2013 Guillaume Subiron, Yann Bordenave, Serigne Modou Wagne.
+License: Danny-SLIRP
+
+Files: vendor/libslirp/src/ip6_icmp.h
+Copyright: Copyright: 2013 Guillaume Subiron, Yann Bordenave, Serigne Modou Wagne.
+License: Danny-SLIRP
+
+Files: vendor/libslirp/src/ip6_input.c
+Copyright: Copyright: 2013 Guillaume Subiron, Yann Bordenave, Serigne Modou Wagne.
+License: Danny-SLIRP
+
+Files: vendor/libslirp/src/ip6_output.c
+Copyright: Copyright: 2013 Guillaume Subiron, Yann Bordenave, Serigne Modou Wagne.
+License: Danny-SLIRP
+
+Files: vendor/libslirp/src/ip_icmp.c
+Copyright: Copyright: 1982, 1986, 1988, 1993 The Regents of the University of California.
+License: BSD-3-clause
+
+Files: vendor/libslirp/src/ip_icmp.h
+Copyright: Copyright: 1982, 1986, 1993 The Regents of the University of California.
+License: BSD-3-clause
+
+Files: vendor/libslirp/src/ip_input.c
+Copyright: Copyright: 1982, 1986, 1988, 1993 The Regents of the University of California.
+License: BSD-3-clause
+
+Files: vendor/libslirp/src/ip_output.c
+Copyright: Copyright: 1982, 1986, 1988, 1990, 1993 The Regents of the University of California.
+License: BSD-3-clause
+
+Files: vendor/libslirp/src/main.h
+Copyright: Copyright: 1995 Danny Gasparovski.
+License: Danny-SLIRP
+
+Files: vendor/libslirp/src/mbuf.c
+Copyright: Copyright: 1995 Danny Gasparovski
+License: Danny-SLIRP
+
+Files: vendor/libslirp/src/mbuf.h
+Copyright: Copyright: 1982, 1986, 1988, 1993 The Regents of the University of California.
+License: BSD-3-clause
+
+Files: vendor/libslirp/src/misc.c
+Copyright: Copyright: 1995 Danny Gasparovski.
+License: Danny-SLIRP
+
+Files: vendor/libslirp/src/misc.h
+Copyright: Copyright: 1995 Danny Gasparovski.
+License: Danny-SLIRP
+
+Files: vendor/libslirp/src/ncsi-pkt.h
+Copyright: Copyright: Gavin Shan, IBM Corporation 2016.
+License: BSD-3-clause
+
+Files: vendor/libslirp/src/ncsi.c
+Copyright: Copyright: 2016-2018 IBM Corp.
+License: BSD-3-clause
+
+Files: vendor/libslirp/src/ndp_table.c
+Copyright: Copyright: 2013 Guillaume Subiron, Yann Bordenave, Serigne Modou Wagne.
+License: Danny-SLIRP
+
+Files: vendor/libslirp/src/sbuf.c
+Copyright: Copyright: 1995 Danny Gasparovski.
+License: Danny-SLIRP
+
+Files: vendor/libslirp/src/sbuf.h
+Copyright: Copyright: 1995 Danny Gasparovski.
+License: Danny-SLIRP
+
+Files: vendor/libslirp/src/slirp.c
+Copyright: Copyright: 2004-2008 Fabrice Bellard
+License: MIT
+
+Files: vendor/libslirp/src/socket.h
+Copyright: Copyright: 1995 Danny Gasparovski.
+License: Danny-SLIRP
+
+Files: vendor/libslirp/src/state.c
+Copyright: Copyright: 2004-2008 Fabrice Bellard
+License: MIT
+
+Files: vendor/libslirp/src/stream.c
+Copyright: Copyright: 2018 Red Hat, Inc.
+License: MIT
+
+Files: vendor/libslirp/src/tcp_input.c
+Copyright: Copyright: 1982, 1986, 1988, 1990, 1993-1994 The Regents of the University of California.
+License: BSD-3-clause
+
+Files: vendor/libslirp/src/tcp_output.c
+Copyright: Copyright: 1982, 1986, 1988, 1990, 1993 The Regents of the University of California.
+License: BSD-3-clause
+
+Files: vendor/libslirp/src/tcp_subr.c
+Copyright: Copyright: 1982, 1986, 1988, 1990, 1993 The Regents of the University of California.
+License: BSD-3-clause
+
+Files: vendor/libslirp/src/tcp_timer.c
+Copyright: Copyright: 1982, 1986, 1988, 1990, 1993 The Regents of the University of California.
+License: BSD-3-clause
+
+Files: vendor/libslirp/src/tcp_timer.h
+Copyright: Copyright: 1982, 1986, 1993 The Regents of the University of California.
+License: BSD-3-clause
+
+Files: vendor/libslirp/src/tcp_var.h
+Copyright: Copyright: 1982, 1986, 1993-1994 The Regents of the University of California.
+License: BSD-3-clause
+
+Files: vendor/libslirp/src/tcpip.h
+Copyright: Copyright: 1982, 1986, 1993 The Regents of the University of California.
+License: BSD-3-clause
+
+Files: vendor/libslirp/src/tftp.c
+Copyright: Copyright: 2004 Magnus Damm <damm@opensource.se>
+License: MIT
+
+Files: vendor/libslirp/src/udp.h
+Copyright: Copyright: 1982, 1986, 1993 The Regents of the University of California.
+License: BSD-3-clause
+
+Files: vendor/libslirp/src/udp6.c
+Copyright: Copyright: 2013 Guillaume Subiron
+License: Danny-SLIRP
+
+Files: vendor/libslirp/src/util.?
+Copyright: 2010-2016 Red Hat Inc.
+ 2003-2008 Fabrice Bellard
+License: MIT
+
+Files: vendor/libslirp/src/vmstate.h
+Copyright: Copyright: 2009-2011 Red Hat, Inc.
+License: BSD-3-clause
+
+Files: vendor/parson/parson.h
+Copyright: Copyright: 2012-2019 Krzysztof Gabis
+License: MIT
+
+Files: qemu/*
+Copyright: 1982, 1986, 1988, 1990-1994, The Regents of the University of California.
+   2016, Thomas Huth, Red Hat Inc.
+License: BSD-3-clause
+
+Files: qemu/slirp/src/arp_table.c
+Copyright: 2011, AdaCore
+License: Expat
+
+Files: qemu/slirp/src/bootp.c
+  qemu/slirp/slirp.c
+Copyright: 2004-2008, Fabrice Bellard
+License: Expat
+
+Files: qemu/slirp/src/debug.h
+  qemu/slirp/src/if.c
+  qemu/slirp/src/if.h
+  qemu/slirp/src/main.h
+  qemu/slirp/src/misc.c
+  qemu/slirp/src/misc.h
+  qemu/slirp/src/sbuf.c
+  qemu/slirp/src/sbuf.h
+  qemu/slirp/src/socket.c
+  qemu/slirp/src/socket.h
+Copyright: 1995, Danny Gasparovski.
+License: Danny-SLIRP
+
+Files: qemu/slirp/src/slirp.c
+ qemu/slirp/src/state.c
+Copyright: 2004-2008 Fabrice Bellard
+License: MIT
+
+Files: qemu/slirp/src/arp_table.c
+Copyright: 2011 AdaCore
+License: MIT
+
+Files: qemu/slirp/src/dnssearch.c
+Copyright: 2012, Klaus Stengel
+License: MIT
+
+Files: qemu/slirp/src/stream.c
+Copyright: 2018 Red Hat, Inc.
+License: MIT
+
+Files: qemu/slirp/src/tftp.c
+Copyright: 2004 Magnus Damm <damm@opensource.se>
+License: MIT
+
+Files: qemu/slirp/src/util.c
+       qemu/slirp/src/util.h
+Copyright: 2003-2008 Fabrice Bellard
+           2010-2016 Red Hat, Inc.
+License: MIT
+
+Files: qemu/slirp/src/ip6.h
+  qemu/slirp/src/ip6_icmp.c
+  qemu/slirp/src/ip6_icmp.h
+  qemu/slirp/src/ip6_input.c
+  qemu/slirp/src/ip6_output.c
+  qemu/slirp/src/ndp_table.c
+Copyright: 2013, Guillaume Subiron, Yann Bordenave, Serigne Modou Wagne.
+License: Danny-SLIRP
+
+Files: qemu/slirp/src/mbuf.c
+Copyright: 1995, Danny Gasparovski
+License: Danny-SLIRP
+
+Files: qemu/slirp/src/udp6.c
+Copyright: 2013, Guillaume Subiron
+License: Danny-SLIRP
+
+License: BSD-3-clause
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ 1. Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 2. Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 3. Neither the name of the University nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+ ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+ FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ SUCH DAMAGE.
+
+License: Danny-SLIRP
+ Copyright (c) 1995,1996 Danny Gasparovski.  All rights reserved.
+ .
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ 1. Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 2. Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ .
+ THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES,
+ INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY
+ AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL
+ DANNY GASPAROVSKI OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+ NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+License: Expat
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+ .
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+ THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ THE SOFTWARE.
+
+License: GPL-2
+ This software is Copyright (c) 2018 by foo.
+ .
+ This is free software, licensed under:
+ .
+   The GNU General Public License, Version 2, June 1991
+ .
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; version 2 dated June, 1991.
+ On Debian systems, the complete text of version 2 of the GNU General
+ Public License can be found in '/usr/share/common-licenses/GPL-2'.
+
+License: GPL-2+
+ This package is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This package is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program. If not, see <https://www.gnu.org/licenses/>
+ .
+ On Debian systems, the complete text of the GNU General
+ Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
+
+License: LGPL-2.1+
+ This library is free software: you can redistribute it and/or modify
+ it under the terms of the GNU Lesser General Public License as published by
+ the Free Software Foundation, either version 2.1 of the License, or
+ (at your option) any later version.
+ .
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU Lesser General Public License for more details.
+ .
+ You should have received a copy of the GNU Lesser General Public License
+ along with this library.  If not, see <http://www.gnu.org/licenses/>.
+ .
+ On Debian systems, the complete text of the GNU Lesser General
+ Public License version 2.1 can be found in "/usr/share/common-licenses/LGPL-2.1".
+
+License: MIT
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+  .
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+  .
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+  THE SOFTWARE.

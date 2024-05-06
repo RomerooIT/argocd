@@ -1,0 +1,16 @@
+FROM php:8.1-apache
+
+RUN useradd apache-user
+
+WORKDIR /etc/apache2
+
+COPY apache2/. .
+
+WORKDIR /var/www
+COPY www/. .
+
+RUN chown apache-user:apache-user /var/www /etc/apache2
+
+USER apache-user
+
+EXPOSE 8080
